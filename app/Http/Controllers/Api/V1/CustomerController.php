@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1;
 use Illuminate\Http\Request;
 use App\Models\Customer;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\V1\CustomerResource;
 
 
 class CustomerController extends Controller
@@ -36,9 +37,9 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Customer $customer)
+    public function show($customer)
     {
-        return Customer::findOrFail($id);
+        return new CustomerResource($customer);
     }
 
     /**
