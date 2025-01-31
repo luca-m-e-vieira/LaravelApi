@@ -18,6 +18,7 @@ class CustomerController extends Controller
      */
     public function index(Request $request)
     {
+        
         $filter = new CustomersFilter();
         $filterItems = $filter->transform($request); //(['column', 'operator','value'])
 
